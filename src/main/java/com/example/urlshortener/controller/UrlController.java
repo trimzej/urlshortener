@@ -25,7 +25,7 @@ public class UrlController {
         String shortUrl = UUID.randomUUID().toString().substring(0, 8);
         if (longUrl.startsWith("http://")) {
             shortUrl = longUrl.substring(longUrl.lastIndexOf("/") + 1);
-            urlMap.put(shortUrl, new ShortUrl());
+            urlMap.put(shortUrl, new ShortUrl(shortUrl, shortUrlDTO.getLongUrl(), System.currentTimeMillis()));
             return ResponseEntity.ok(shortUrl);
         } else {
             return ResponseEntity.badRequest().body("Invalid URL");

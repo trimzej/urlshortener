@@ -1,12 +1,13 @@
 package com.example.urlshortener.model;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Getter
-@NoArgsConstructor
+@AllArgsConstructor
 public class ShortUrl {
     private String shortUrl;
     private String longUrl;
+    private Long creationDate;
 
 }
